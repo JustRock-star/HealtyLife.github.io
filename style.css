@@ -1,0 +1,681 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', 'Montserrat', 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+/* ==================== НАВИГАЦИЯ ==================== */
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    padding: 0;
+    width: 100%;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    margin: 0;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+}
+
+.nav-link:hover {
+    opacity: 0.8;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+/* ==================== БАННЕР ==================== */
+.banner {
+    position: relative;
+    height: 400px;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%23e8f5e9" width="1200" height="400"/><circle cx="200" cy="100" r="80" fill="%23c8e6c9" opacity="0.5"/><circle cx="1000" cy="300" r="100" fill="%23a5d6a7" opacity="0.5"/><rect x="400" y="150" width="200" height="150" fill="%2366bb6a" opacity="0.3"/></svg>');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(102, 126, 234, 0.4);
+}
+
+.banner-content {
+    position: relative;
+    z-index: 2;
+}
+
+.banner-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.banner-text {
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* ==================== ОСНОВНОЙ КОНТЕНТ ==================== */
+.page {
+    display: none;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.page.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.page-header {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+}
+
+/* ==================== ГЛАВНАЯ СТРАНИЦА ==================== */
+.hero-section {
+    background: white;
+    padding: 3rem 1rem;
+}
+
+.hero-text {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    text-align: center;
+}
+
+.hero-text h2 {
+    color: #667eea;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.hero-text p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.8;
+}
+
+.motivational-phrases {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.phrase-card {
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.phrase-card:hover {
+    transform: translateY(-5px);
+}
+
+.phrase-card .icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.phrase-card p {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #333;
+}
+
+/* ==================== СТРАНИЦА ПИТАНИЯ ==================== */
+.text-section {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 3rem;
+}
+
+.text-section h2 {
+    color: #667eea;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.text-section h2:first-child {
+    margin-top: 0;
+}
+
+.text-section p {
+    color: #555;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+
+.nutrition-list {
+    list-style: none;
+    padding: 0;
+}
+
+.nutrition-list li {
+    background: #f8f9fa;
+    padding: 0.8rem;
+    margin: 0.5rem 0;
+    border-left: 4px solid #667eea;
+    border-radius: 5px;
+}
+
+.nutrition-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.nutrition-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nutrition-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.nutrition-card .food-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.nutrition-card h3 {
+    color: #667eea;
+    margin-bottom: 0.5rem;
+}
+
+.nutrition-card p {
+    color: #777;
+    font-size: 0.9rem;
+}
+
+/* ==================== СТРАНИЦА МИФОВ ==================== */
+.myths-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.myth-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #f5576c;
+    transition: transform 0.3s ease;
+}
+
+.myth-card:hover {
+    transform: translateY(-5px);
+}
+
+.myth-card h3 {
+    color: #f5576c;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.myth-text {
+    color: #555;
+    line-height: 1.8;
+}
+
+.myth-text strong {
+    color: #667eea;
+}
+
+/* ==================== СТРАНИЦА МЕНЮ ==================== */
+.daily-menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.meal-card {
+    background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.meal-card:hover {
+    transform: translateY(-5px);
+}
+
+.meal-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.meal-card h3 {
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.meal-card p {
+    color: #555;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+}
+
+.meal-card small {
+    color: #777;
+    font-size: 0.85rem;
+}
+
+.tips-section {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    margin-top: 2rem;
+}
+
+.tips-section h2 {
+    color: #667eea;
+    margin-bottom: 1rem;
+}
+
+.tips-list {
+    list-style: none;
+    padding: 0;
+}
+
+.tips-list li {
+    padding: 0.8rem 1rem;
+    margin: 0.5rem 0;
+    background: #f8f9fa;
+    border-left: 4px solid #a5d6a7;
+    border-radius: 5px;
+    color: #555;
+}
+
+.tips-list li::before {
+    content: "✓ ";
+    color: #66bb6a;
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+/* ==================== КАЛЬКУЛЯТОР ==================== */
+.calculator-wrapper {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.calculator-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.form-group input,
+.form-group select {
+    padding: 0.8rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 5px rgba(102, 126, 234, 0.3);
+}
+
+.btn-calculate {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-calculate:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-calculate:active {
+    transform: translateY(0);
+}
+
+/* ==================== РЕЗУЛЬТАТЫ КАЛЬКУЛЯТОРА ==================== */
+.result-section {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.result-section h2 {
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.result-value {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.calories-number {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+.calories-unit {
+    font-size: 1.2rem;
+}
+
+.result-info {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.result-info p {
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.macros-info {
+    background: rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    border-radius: 5px;
+    margin: 1rem 0;
+}
+
+.macro-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.macro-item:last-child {
+    border-bottom: none;
+}
+
+.result-note {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #fff;
+    margin-top: 1rem;
+}
+
+/* ==================== ФУТЕР ==================== */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+.footer-content p {
+    margin: 0.5rem 0;
+}
+
+/* ==================== АДАПТИВНОСТЬ ==================== */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: #667eea;
+        padding: 1rem;
+        gap: 0;
+        list-style: none;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu li {
+        padding: 0.5rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .banner-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .banner-text {
+        font-size: 1rem;
+    }
+
+    .page-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .motivational-phrases {
+        grid-template-columns: 1fr;
+    }
+
+    .nutrition-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .myths-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .daily-menu {
+        grid-template-columns: 1fr;
+    }
+
+    .content-container {
+        padding: 1.5rem 1rem;
+    }
+
+    .hero-section {
+        padding: 1.5rem 1rem;
+    }
+
+    .text-section {
+        padding: 1rem;
+    }
+
+    .calculator-wrapper {
+        max-width: 100%;
+        padding: 1rem;
+    }
+
+    .calories-number {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-container {
+        padding: 0.8rem 1rem;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .banner {
+        height: 300px;
+    }
+
+    .banner-content h1 {
+        font-size: 1.3rem;
+    }
+
+    .banner-text {
+        font-size: 0.9rem;
+    }
+
+    .page-header h1 {
+        font-size: 1.3rem;
+    }
+
+    .hero-text h2 {
+        font-size: 1.5rem;
+    }
+
+    .nutrition-card .food-icon {
+        font-size: 2rem;
+    }
+
+    .myth-card {
+        padding: 1rem;
+    }
+
+    .meal-card {
+        padding: 1rem;
+    }
+
+    .content-container {
+        padding: 1rem 0.5rem;
+    }
+
+    .result-value {
+        flex-direction: column;
+    }
+
+    .calories-number {
+        font-size: 2rem;
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+}
